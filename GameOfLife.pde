@@ -1,10 +1,17 @@
 //Author : Sanjana Gupta
+//CS 7492 - Simulation of Biology
+//Assignment 1
+//Professor Greg Turk
+
 Cell grid[][];
 Boolean updateGrid = false;
 Boolean sim = false;
+Boolean displayText = true;
 void setup()
 {
   size(600,600);
+
+  
   grid = new Cell[100][100];
   for(int i = 0 ; i < 100 ; i ++)
   {
@@ -13,6 +20,7 @@ void setup()
       grid[i][j] = new Cell();
     }
   }
+  
    frameRate(5);
 }
 
@@ -30,14 +38,21 @@ void draw()
   
   if(sim)
   {
+    displayText = false;
     simulate();
   }
-  
-  
+  if(!sim)
+  {
+     displayText = true;
+  }
+  if(displayText)
+  {
   displayInstructions();
   header();
+  }
 }
 
+//UTILITY FUNCTIONS TO SIMULATE GRID 
 void drawGrid()
 {
   for(int i = 0 ; i < 100 ; i++)

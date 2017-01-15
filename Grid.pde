@@ -1,6 +1,22 @@
 class Grid
 {
-  Cell grid[][];
+  Cell grid[][]= new Cell[100][100];;
+  Grid()
+  {
+    
+  }
+  void declare()
+  {
+    
+     for(int i = 0 ; i < 100 ; i ++)
+    {
+    for(int j = 0 ;j < 100 ; j++)
+    {
+      grid[i][j].state = false;
+      grid[i][j].neighbours = 0;
+    }
+  }
+  }
   void drawGrid()
  {
   for(int i = 0 ; i < 100 ; i++)
