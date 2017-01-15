@@ -25,7 +25,9 @@ void keyPressed()
   if(key == 'R'){}
  
   if(key == ' '){ updateGrid = !updateGrid;} 
+    
          
+   if(key == '`'){filming = !filming;}      
   
   
 }

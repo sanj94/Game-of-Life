@@ -41,7 +41,7 @@ void draw()
     displayText = false;
     simulate();
   }
-  if(!sim)
+  if(!sim ||!filming)
   {
      displayText = true;
   }
@@ -50,6 +50,8 @@ void draw()
   displayInstructions();
   header();
   }
+  if(filming) {videoRecord();}
+  
 }
 
 //UTILITY FUNCTIONS TO SIMULATE GRID 

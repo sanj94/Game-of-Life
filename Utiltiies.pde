@@ -1,5 +1,7 @@
 color red = #FF0000 , white = #FFFFFF , black = #000000 , blue = #0000ff , green = #00ff00;
-
+int frameCounter = 0;
+int pictureCounter=0;
+Boolean filming = false;
 void displayInstructions()
 {
   fill(white);
@@ -16,3 +18,11 @@ void header()
   text("Author: Sanjana Gupta",10,10);
   text("CS 7492-Simulation of Biology - Assignment 1",width-250,10);
 }
+
+void videoRecord()
+{
+  displayText = false; 
+  saveFrame("FRAMES/F"+nf(frameCounter++,4)+".tif");
+}
+
+void snapPicture() {displayText = false; saveFrame("PICTURES/P"+nf(pictureCounter++,3)+".jpg"); }
